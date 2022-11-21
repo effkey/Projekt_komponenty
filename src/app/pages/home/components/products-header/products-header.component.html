@@ -1,0 +1,18 @@
+<mat-card class="mb-4">
+  <div class="flex justify-between">
+    <div class="flex items-center">
+      <mat-form-field class="mr-5 w-60">
+        <mat-label>Wyszukaj rower</mat-label>
+        <input matInput #message placeholder="Podaj nazwę roweru" />
+      </mat-form-field>
+      <button mat-button [matMenuTriggerFor]="sortByMenu">
+        Sortuj po cenie
+      </button>
+      <mat-menu #sortByMenu="matMenu">
+        <button mat-menu-item>Rosnąco</button>
+        <button mat-menu-item>Malejąco</button>
+      </mat-menu>
+      <button mat-button>Filtruj</button>
+    </div>
+  </div>
+</mat-card>
