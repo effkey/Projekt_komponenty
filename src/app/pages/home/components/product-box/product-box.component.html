@@ -1,15 +1,24 @@
-<mat-card>
-  <div class="flex justify-between">
-    <div class="flex items-center">
-      <img class="mb-1 h-[300px]" src="http://via.placeholder.com/150" />
-      <div class="ml-20 mb-40">
-        <h1>Rower MTB 2020</h1>
-        <p class="">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
-          cumque, in repellat vitae omnis possimus consequuntur distinctio
-          tempora fuga quas dolorum laborum quaerat itaque, et tempore, soluta
-          harum beatae. Eaque!
-        </p>
+<mat-card class="mt-6">
+  <div class="flex items-center">
+    <img class="mb-1 h-[300px]" src="http://via.placeholder.com/150" />
+    <div class="ml-20 mb-5">
+      <h1>Rower MTB 2020</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
+        cumque, in repellat vitae omnis possimus consequuntur distinctio tempora
+        fuga quas dolorum laborum quaerat itaque, et tempore, soluta harum
+        beatae. Eaque!
+      </p>
+      <p>Kolor:</p>
+      <p>Model:</p>
+      <p>Rozmiar:</p>
+
+      <span class="flex justify-end text-red-400 mb-5 mr-5 text-4xl">{{
+        "150 zł"
+      }}</span>
+      <div class="flex justify-between">
+        <button mat-raised-button>Szczegóły</button>
+        <button mat-raised-button>Dodaj do koszyka</button>
       </div>
     </div>
   </div>
