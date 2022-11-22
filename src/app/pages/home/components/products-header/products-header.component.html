@@ -5,12 +5,21 @@
         <mat-label>Wyszukaj rower</mat-label>
         <input matInput #message placeholder="Podaj nazwę roweru" />
       </mat-form-field>
-      <button mat-button [matMenuTriggerFor]="sortByMenu">
+      <button mat-button [matMenuTriggerFor]="sortBycena">
         Sortuj po cenie
       </button>
-      <mat-menu #sortByMenu="matMenu">
+      <mat-menu #sortBycena="matMenu">
         <button mat-menu-item>Rosnąco</button>
         <button mat-menu-item>Malejąco</button>
+      </mat-menu>
+      <button mat-button [matMenuTriggerFor]="sortBytyp">
+        Sortuj po typie
+      </button>
+      <mat-menu #sortBytyp="matMenu">
+        <button mat-menu-item>Góral</button>
+        <button mat-menu-item>MTB</button>
+        <button mat-menu-item>Szosa</button>
+        <button mat-menu-item>Turystyczny</button>
       </mat-menu>
       <button mat-button>Filtruj</button>
     </div>
