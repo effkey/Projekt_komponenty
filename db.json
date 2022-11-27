@@ -1,0 +1,63 @@
+{
+  "product": [
+      {
+        "id": 1,
+        "title": "Triban RC500",
+        "price": 170,
+        "type": "Szosa",
+        "description": "Rower szosowy Triban RC500 z hamulcami tarczowymi którym jednak",
+        "image":
+          "https://miastorowerow.pl/65945/rower-28-kellys-arc-30-l-szosa-rowery-szosowe.jpg",
+        "size": 165,
+        "color": "czerwony",
+        "productCount": 10
+        
+      },
+      {
+        "id": 2,
+        "title": "Romet Aspre",
+        "price": 110,
+        "type": "mtb",
+        "description": "Rower gravelowy Romet Aspre to rower szosowy​,​ którym jednak śmiało możesz zjechać z utwardzonej drogi.",
+        "image":
+          "https://sharetribe.imgix.net/5f1acc63-5ecf-40a6-8e59-5a2affb8bc6b/610d1bc1-d520-4d44-8c63-af07c104f731?auto=format&fit=clip&h=750&w=750&s=270b13fd5044b3d3dda241acd5429fc5.jpg",
+        "size": "52",
+        "color": "czerwony",
+        "productCount": 10
+        
+      },
+      {
+        "id": 3,
+        "title": "Kross Vento 3.0",
+        "price": 100,
+        "type": "Szosa",
+        "description": "Rower przeznaczony do szybkiej jazdy na dłuższych odcinkach asfaltowych. ",
+        "image":
+          "https://sharetribe.imgix.net/5f1acc63-5ecf-40a6-8e59-5a2affb8bc6b/611654b3-b779-4f74-b7ff-2e2b32f25857?auto=format&fit=clip&h=750&w=750&s=02a7babe7cefcc4872cf0d9b3e6bd568.jpg",
+        "size": "52",
+        "color": "czerwony",
+        "productCount": 10
+        
+      },
+      {
+        "id": 4,
+        "title": "RC 120",
+        "price": 60,
+        "type": "Szosa",
+        "description": "Wszechstronny rower do poprawy osiągów! Komfortowa geometria​,​ rama z aluminium​,​ karbonowy widelec i tarczowe hamulce dają możliwość wypróbowania sił na każdym rodzaju trasy. ",
+        "image":
+          "https://sharetribe.imgix.net/5f1acc63-5ecf-40a6-8e59-5a2affb8bc6b/5f63589d-b91a-42f7-9a94-6bd138c5fb36?auto=format&fit=clip&h=750&w=750&s=083ec29964d9af6ee911c7da42131f1b.jpg",
+        "size": "122",
+        "color": "żółty",
+        "productCount": 10
+        
+      }
+      
+    ],
+
+    
+    "type":["Szosa","mtb","goral","turystyk"]
+      
+    
+    
+}

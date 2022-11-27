@@ -6,20 +6,23 @@
         <input matInput #message placeholder="Podaj nazwę roweru" />
       </mat-form-field>
       <button mat-button [matMenuTriggerFor]="sortBycena">
-        Sortuj po cenie
+        Sortuj po cenie {{ sort }}
       </button>
       <mat-menu #sortBycena="matMenu">
-        <button mat-menu-item>Rosnąco</button>
-        <button mat-menu-item>Malejąco</button>
+        <button (click)="onSortUpdated('desc')" mat-menu-item>Rosnaco</button>
+        <button (click)="onSortUpdated('asc')" mat-menu-item>Malejaco</button>
       </mat-menu>
       <button mat-button [matMenuTriggerFor]="sortBytyp">
         Sortuj po typie
       </button>
+
+      <!-- Sortowanie po typie -->
       <mat-menu #sortBytyp="matMenu">
-        <button mat-menu-item>Góral</button>
-        <button mat-menu-item>MTB</button>
-        <button mat-menu-item>Szosa</button>
-        <button mat-menu-item>Turystyczny</button>
+        <mat-selection-list [multiple]="false">
+          <mat-list-option *ngFor="let type of types" [value]="type">
+            <button (click)="onShowType(type)">{{ type }}</button>
+          </mat-list-option>
+        </mat-selection-list>
       </mat-menu>
       <button mat-button>Filtruj</button>
     </div>

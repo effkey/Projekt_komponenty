@@ -1,14 +1,46 @@
 <mat-toolbar class="max-w-7xl mx-auto border-x justify-between">
   <a routerLink="home">Wypożyczalnia rowerowa</a>
+
+  <!-- Komponent,który trzyma ikony  -->
   <button mat-icon-button [matMenuTriggerFor]="menu">
-    <mat-icon matBadgeColor="warn">shopping_cart</mat-icon>
-    <!-- <mat-icon [matBadge]="1" matBadgeColor="warn">shopping_cart</mat-icon> -->
+    <mat-icon
+      [matBadge]="itemsQuantity"
+      [matBadgeHidden]="!itemsQuantity"
+      matBadgeColor="warn"
+      >shopping_cart</mat-icon
+    >
   </button>
+
+  <!-- Jak klikniesz w koszyk pojawia się menu -->
   <mat-menu #menu="matMenu">
     <div class="p-3 divide-y divide-solid">
       <div class="pb-3 flex justify-between">
-        <span class="mr-16">1 przedmiot</span>
+        <span class="mr-16">{{ itemsQuantity }} przedmioty</span>
         <a routerLink="cart">Zobacz koszyk</a>
+      </div>
+      <!-- Wypisywanie w menu ceny oraz towarow -->
+      <div *ngIf="cart.items.length" class="py-3">
+        <div
+          *ngFor="let item of cart.items"
+          class="flex justify-between font-light mb-2"
+        >
+          {{ item.name }} x {{ item.quantity }}
+          <span class="font-bold">{{ item.price + " zł" }} </span>
+        </div>
+      </div>
+
+      <div class="flex justify-between py-3">
+        Suma:
+        <span class="font-bold">{{ getTotal(cart.items) + "zł" }}</span>
+      </div>
+
+      <div class="flex justify-between py-3">
+        <button mat-raised-button (click)="onClearCart()" class="bg-red-600">
+          Usuń koszyk
+        </button>
+        <button routerLink="cart" mat-raised-button class="bg-green-600">
+          Kup
+        </button>
       </div>
     </div>
   </mat-menu>

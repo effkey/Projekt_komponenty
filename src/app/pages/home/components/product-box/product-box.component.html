@@ -1,26 +1,32 @@
-<mat-card class="mt-6">
+<!-- <div *ngFor="let product of product"> -->
+<mat-card *ngIf="product" class="mt-6">
   <div class="flex items-center">
-    <img class="mb-1 h-[300px]" src="http://via.placeholder.com/150" />
+    <img class="mb-1 h-[280px]" src="{{ product.image }}" />
     <div class="ml-20 mb-5">
-      <h1>Rower MTB 2020</h1>
+      <h1>{{ product.title }}</h1>
       <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quisquam
-        cumque, in repellat vitae omnis possimus consequuntur distinctio tempora
-        fuga quas dolorum laborum quaerat itaque, et tempore, soluta harum
-        beatae. Eaque!
+        {{ product.description }}
       </p>
-      <p>Kolor:</p>
+      <p>Kolor: {{ product.color }}</p>
       <p>Model:</p>
-      <p>Rozmiar:</p>
-      <p>Typ:</p>
+      <p>Rozmiar: {{ product.size }}</p>
+      <p>Typ: {{ product.type }}</p>
+      <p>Ilosc: {{ product.productCount }}</p>
+    </div>
 
-      <span class="flex justify-end text-red-400 mb-5 mr-5 text-4xl">{{
-        "150zł/dzień"
-      }}</span>
-      <div class="flex justify-between">
-        <button mat-raised-button>Szczegóły</button>
-        <button mat-raised-button>Dodaj do koszyka</button>
+    <div class="ml-20">
+      <span class="flex justify-end text-red-400 mb-5 mr-5 text-4xl">
+        {{ product.price + " zł/dzień" }}
+      </span>
+      <div class="mb-5">
+        <button mat-raised-button class="">Szczegóły</button>
       </div>
+      <!-- event dodawania do koszyka -->
+      <button mat-raised-button (click)="onAddToCart()">
+        Dodaj do koszyka
+      </button>
     </div>
   </div>
 </mat-card>
+<!-- </div> -->
+<!-- </div> -->

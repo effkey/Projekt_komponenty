@@ -21,11 +21,26 @@ import { HeaderComponent } from "./components/header/header.component";
 
 import { MatInputModule } from "@angular/material/input";
 import { HomeComponent } from "./pages/home/home.component";
-import { ProductsHeaderComponent } from './pages/home/components/products-header/products-header.component';
-import { ProductBoxComponent } from './pages/home/components/product-box/product-box.component';
+import { ProductsHeaderComponent } from "./pages/home/components/products-header/products-header.component";
+import { ProductBoxComponent } from "./pages/home/components/product-box/product-box.component";
+import { CartComponent } from "./pages/cart/cart.component";
+import { CartService } from "./services/cart.service";
 
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { StoreService } from "./services/store.service";
+import { HttpClientModule } from "@angular/common/http";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatNativeDateModule } from "@angular/material/core";
+import { FormsModule } from "@angular/forms";
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, HomeComponent, ProductsHeaderComponent, ProductBoxComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    HomeComponent,
+    ProductsHeaderComponent,
+    ProductBoxComponent,
+    CartComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,8 +58,13 @@ import { ProductBoxComponent } from './pages/home/components/product-box/product
     MatBadgeModule,
     MatSnackBarModule,
     MatInputModule,
+    MatDatepickerModule,
+    HttpClientModule,
+    MatFormFieldModule,
+    MatNativeDateModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [CartService, StoreService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
