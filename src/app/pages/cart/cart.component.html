@@ -26,7 +26,8 @@
           <input
             matInput
             [matDatepicker]="myDatePicker"
-            [min]="minDate"
+            [min]="minStartDate"
+            [max]="date2"
             [(ngModel)]="date1"
           />
           <mat-datepicker-toggle [for]="myDatePicker" matSuffix>
@@ -49,7 +50,7 @@
           <input
             matInput
             [matDatepicker]="myDatePicker"
-            [min]="minDate"
+            [min]="minEndDate"
             [(ngModel)]="date2"
           />
           <mat-datepicker-toggle [for]="myDatePicker" matSuffix>

@@ -16,6 +16,7 @@ export class ProductsHeaderComponent implements OnInit, OnDestroy {
   // Sortowanie po typie
   @Output() showType = new EventEmitter<string>();
   @Output() sortChange = new EventEmitter<string>();
+  @Output() clearFiltersEvent = new EventEmitter<string>();
 
   typesSubscription: Subscription | undefined;
   types: Array<string> | undefined;
@@ -41,6 +42,10 @@ export class ProductsHeaderComponent implements OnInit, OnDestroy {
   onSortUpdated(newSort: string): void {
     this.sort = newSort;
     this.sortChange.emit(newSort);
+  }
+
+  onClearFilters():void{
+    this.clearFiltersEvent.emit();
   }
 
   ngOnDestroy(): void {

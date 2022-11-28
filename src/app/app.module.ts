@@ -32,6 +32,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatNativeDateModule } from "@angular/material/core";
 import { FormsModule } from "@angular/forms";
+import { DetailsComponent } from "./pages/details/details.component";
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { FormsModule } from "@angular/forms";
     ProductsHeaderComponent,
     ProductBoxComponent,
     CartComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,

@@ -10,20 +10,6 @@ export class ProductBoxComponent {
   // dodawanie produktu do koszyka
 
   @Input() product: Product | undefined;
-  // product: Product | undefined = {
-  //   id: 1,
-  //   title: "Triban RC500",
-  //   price: 125,
-  //   type: "szosa",
-  //   description: "Rower szosowy Triban RC500 z hamulcami tarczowymi",
-  //   size: 165,
-  //   color: "czerwony",
-  //   productCount: 10,
-  //   image:
-  //     "https://miastorowerow.pl/65945/rower-28-kellys-arc-30-l-szosa-rowery-szosowe.jpg",
-
-  //   // image: "http://via.placeholder.com/150",
-  // };
 
   @Output() addToCart = new EventEmitter();
 

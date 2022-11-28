@@ -19,7 +19,7 @@
         {{ product.price + " zł/dzień" }}
       </span>
       <div class="mb-5">
-        <button mat-raised-button class="">Szczegóły</button>
+        <button mat-raised-button [routerLink]="['/details',product.id]">Szczegóły</button>
       </div>
       <!-- event dodawania do koszyka -->
       <button mat-raised-button (click)="onAddToCart()">

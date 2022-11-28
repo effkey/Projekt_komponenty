@@ -7,6 +7,7 @@
     <app-products-header
       (showType)="onShowType($event)"
       (sortChange)="onSortUpdated($event)"
+      (clearFiltersEvent)="clearFilters($event)"
     ></app-products-header>
 
     <app-product-box

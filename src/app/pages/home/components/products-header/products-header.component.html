@@ -13,7 +13,7 @@
         <button (click)="onSortUpdated('asc')" mat-menu-item>Malejaco</button>
       </mat-menu>
       <button mat-button [matMenuTriggerFor]="sortBytyp">
-        Sortuj po typie
+        Filtruj po typie
       </button>
 
       <!-- Sortowanie po typie -->
@@ -24,7 +24,7 @@
           </mat-list-option>
         </mat-selection-list>
       </mat-menu>
-      <button mat-button>Filtruj</button>
+      <button (click)="onClearFilters()" mat-button>Wyczyść filtrowanie</button>
     </div>
   </div>
 </mat-card>

@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   type: string | undefined;
   products: Array<Product> | undefined;
   productsSubscription: Subscription | undefined;
-  sort = "desc";
+  sort: string | undefined;
 
   constructor(
     private cartService: CartService,
@@ -25,20 +25,31 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onSortChange(newSort: string): void {
-    this.sort = newSort;
+    this.sort = `_sort=price&_order=${newSort}`;
     this.getProducts();
   }
   getProducts(): void {
+    var list: string[] = [];
+    if (this.type != undefined) {
+      list = list.concat(this.type);
+    }
+    if (this.sort != undefined) {
+      list = list.concat(this.sort);
+    }
     this.productsSubscription = this.storeService
-      .getAllProducts(this.sort, this.type)
+      .getAllProducts(list)
       .subscribe((_products) => {
         this.products = _products;
       });
   }
+  clearFilters(str: string): void {
+    this.type = undefined;
+    this.getProducts();
+  }
 
   // Sortowanie po typie
   onShowType(newType: string): void {
-    this.type = newType;
+    this.type = `type=${newType}`;
     this.getProducts();
   }
 
@@ -60,7 +71,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   onSortUpdated(newSort: string): void {
-    this.sort = newSort;
+    this.sort = `_sort=price&_order=${newSort}`;
     this.getProducts();
   }
 }

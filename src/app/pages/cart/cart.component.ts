@@ -53,7 +53,8 @@ export class CartComponent implements OnInit {
     this.cartService.removeQuantity(item);
   }
 
-  minDate = new Date();
+  minStartDate = new Date();
+  minEndDate = new Date();
   date1: any;
   date2: any;
   Days: any;
@@ -61,6 +62,7 @@ export class CartComponent implements OnInit {
   onCalculateDays(): number {
     const date1Modified = new Date(this.date1);
     const date2Modified = new Date(this.date2);
+    this.minEndDate = this.getMinEndDate();
     const Time = date2Modified.getTime() - date1Modified.getTime();
     this.Days = Math.round(Time / (1000 * 3600 * 24));
     console.log(this.Days);
@@ -70,5 +72,15 @@ export class CartComponent implements OnInit {
   setNumberOfDays(): void {
     let day = this.onCalculateDays();
     this.cartService.setNumberOfDays(day);
+  }
+
+  getMinEndDate():Date{
+    if(this.date1 == null){
+      return this.minEndDate;
+    }
+    return new Date(this.date1);
+  }
+  setMinEndDate(date :Date):void{
+    this.minEndDate = date;
   }
 }
